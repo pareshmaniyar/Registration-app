@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome, <%=req.user.givenName %> <%=req.user.familyName %> </h1>
+      <div type="email" placeholder="email"><br><br>
+      <div type="password" placeholder="password"><br><br>
+      <div type="submit" name="Login">
+      Email<%=req.user.email %><br><br>
+      Image<%=req.user.image %></div><br><br>
+      <div type="submit">
+  </body>
+</html>

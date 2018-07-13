@@ -1,4 +1,5 @@
 var express = require('express');
+const app = express();
 // var createError = require('http-errors');
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
@@ -7,7 +8,12 @@ var express = require('express');
 var Router = require('./routes');
 // var usersRouter = require('./routes/users');
 const passportSetup = require('./config/passport-setup');
-const app = express();
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+
+mongoose.connect(keys.mongoDB.DBURI, { useNewUrlParser: true }, () => {
+  console.log('connnected to mongodb server');
+});
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
